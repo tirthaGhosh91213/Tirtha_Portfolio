@@ -79,7 +79,7 @@ const Work = () => {
 
      
       {selectedProject && (
-        <div className="fixed inset-0 z-50 relative flex items-center justify-center bg-black bg-opacity-90 p-4">
+        <div className="fixed inset-0 z-50  flex items-center justify-center bg-black bg-opacity-90 p-4">
           <div className="bg-gray-800 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative">
             <div className="flex justify-end p-4">
               <button
