@@ -18,6 +18,10 @@ import gitLogo from './assets/git.png';
 import githubLogo from './assets/github.png';
 import vscodeLogo from './assets/vscode.png';
 import postmanLogo from './assets/postman.png';
+import glaLogo from './assets/collegeLogo.png';
+import vpsLogo from './assets/vps_logo.png';
+
+
 
 import figmaLogo from './assets/figma.png';
 import netlifyLogo from './assets/netlify.png';
@@ -89,40 +93,73 @@ export const experiences = [
   {
     id: 0,
     img: agcLogo,
-    role: 'Fullstack Engineer',
-    company: 'Agumentik Group of Companies',
-    date: 'July 2023 - March 2024',
-    desc: 'Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS.',
-    skills: ['ReactJS', 'Redux', 'JavaScript', 'Tailwind CSS', 'HTML', 'CSS', 'SQL'],
+    role: 'Fullstack Developer',
+    company: 'IETE HIT-IT',
+    date: ' March 2024 - present',
+    desc: 'Contributed to innovative projects as a Fullstack Developer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, MongoDB, Bootstrap , NodeJS , ExpressJS and ReactJS.',
+    skills: ['ReactJS', 'Redux', 'JavaScript', 'Tailwind CSS', 'HTML', 'CSS', 'MongoDB','NodeJS','ExpressJS'],
   },
   {
     id: 1,
     img: newtonschoolLogo,
-    role: 'Frontend Intern',
-    company: 'Newton School',
-    date: 'September 2021 - August 2022',
-    desc: 'Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI.',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Figma', 'Material UI'],
+    role: 'Fullstack Developer',
+    company: 'ISA & ISOI',
+    date: 'February 2024 - present',
+    desc: 'Contributed to innovative projects as a Fullstack Developer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, MongoDB, Bootstrap , NodeJS , ExpressJS and ReactJS.',
+    skills: ['ReactJS', 'Redux', 'JavaScript', 'Tailwind CSS', 'HTML', 'CSS', 'MongoDB','NodeJS','ExpressJS'],
   },
 ];
 
+
 // Education Section
+
+ export const education = [
+    {
+      id: 0,
+      img: glaLogo,
+      school: "HIT Hadia, West Bengal",
+      date: "Sept 2023 - present",
+      grade: "8.3 CGPA",
+      desc: "I have pursuing my B.Tech in Information Technlogy from HIT Hadia, West Bengal. I gained a strong foundation in programming, software development, and computer science principles in HIT. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating System, Computer newworking , Web Development, and Software Engineering. I actively participating in various workshops and technical events, which enhance my skills and knowledge. My experience at Haldia Institute of Technology have been instrumental in shaping my technical abilities and professional growth.",
+      degree: "bachelor of Technology in Information Technology ",
+    },
+    
+    {
+      id: 1,
+      img: vpsLogo,
+      school: "Kaligram High School , Bardhaman , West Bengal",
+      date: "Apr 2021 - March 2022",
+      grade: "86.5%",
+      desc: "I completed my class 12 education from Kaligram High School , Bardhaman under the WBCHSE board, where I studied Physics, Chemistry,  Mathematics , Biology (PCMB).",
+      degree: " WBCHSE(XII) - PCMB ",
+    },
+    {
+      id: 1,
+      img: vpsLogo,
+      school: "Kaligram High School , Bardhaman , West Bengal",
+      date: "Apr 2019 - March 2020",
+      grade: "78%",
+      desc: "I completed my class 10 education from Kaligram High School , Bardhaman, under the WBBSE board, where I studied Science with Computer.",
+      degree: "WBBSE(X) ",
+    },
+  
+  ]
 
 
 // Projects Section
 export const projects = [
   {
     id: 0,
-    title: 'GitHub Profile Detective',
-    description: 'A powerful and user-friendly React.js application designed to uncover detailed GitHub profile information.',
+    title: 'Health_Hub',
+    description: 'This is a full stack project frontend is made by me using ReactJS , tailwind CSS and the rest API was handled by me  and the backend is made by the my friend Soumajit Banerjee using Spring boot ',
     image: githubdetLogo,
-    tags: ['HTML', 'CSS', 'JavaScript', 'React JS', 'API'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'React JS', 'API','Tailwind CSS'],
   },
   {
     id: 1,
-    title: 'CS Prep',
-    description: 'A full-stack quiz-based platform designed for GATE/UGC NET students to practice previous year questions.',
+    title: 'Mentor & Mantis connect',
+    description: 'It was a frontend gorup project . My contribution was made the website responsive and functional  ',
     image: csprepLogo,
-    tags: ['React JS', 'Node.js', 'MongoDB', 'Express', 'HTML', 'CSS', 'JavaScript'],
+    tags: [ 'HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
   },
 ];
