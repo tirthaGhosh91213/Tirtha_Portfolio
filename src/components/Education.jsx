@@ -1,14 +1,25 @@
 import React from "react";
 import { education } from "../constants"; 
+import bgVideo from "../assets/bgViedo.mp4";
 
 const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[8vw] font-sans bg-skills-gradient clip-path-custom-3"
+      className="py-24 pb-24 px-[12vw] relative md:px-[7vw] lg:px-[8vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
-      {/* Section Title */}
-      <div className="text-center mb-16">
+      <div className="  top-0 absolute left-0 w-full h-full overflow-hidden ">
+            <video
+              src={bgVideo}
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover"
+            >
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+      <div className="text-center relative mb-16">
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">

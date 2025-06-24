@@ -78,6 +78,7 @@ const Navbar = () => {
           </a>
           <a
             href="https://www.linkedin.com/in/tirtha-ghosh-098a072ba/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-[#65cfa1]"
           >

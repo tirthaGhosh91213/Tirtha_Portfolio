@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import Tilt from 'react-parallax-tilt';
-// import profileImage from '../assets/profile2.jsx';
+import Tilt from 'react-parallax-tilt';
+import profileImage from "./profileImg.png";
 
 const About = () => {
   const [text, setText] = useState('');
@@ -79,23 +79,28 @@ const About = () => {
           </a>
         </div>
 
-        {/* <div className="md:w-1/2 flex justify-center md:justify-end">
+        <div className="md:w-1/2 flex justify-center md:justify-end">
           <Tilt
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] border-4 border-purple-700 rounded-full"
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <img
-              src={profileImage}
-              alt="Tarun Kaushik"
-              className="w-full h-full rounded-full object-cover drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
-            />
-          </Tilt>
-        </div> */}
+  className="w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 ml-16 border-4 border-green-700 rounded-3xl"
+  tiltMaxAngleX={20}
+  tiltMaxAngleY={20}
+  perspective={1000}
+  scale={1.05}
+  transitionSpeed={1000}
+  gyroscope={true}
+>
+  <img
+    src={profileImage}
+    alt="Tirtha Ghosh"
+    className="w-full h-full rounded-3xl object-cover"
+    style={{
+      background: 'linear-gradient(90deg, #65cfa1, #a855f7)',
+      boxShadow: '0 0 2px #65cfa1, 0 0 2px #65cfa1, 0 0 40px #65cfa1',
+    }}
+  />
+</Tilt>
+
+        </div>
       </div>
     </section>
   );

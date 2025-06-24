@@ -19,7 +19,7 @@ import githubLogo from './assets/github.png';
 import vscodeLogo from './assets/vscode.png';
 import postmanLogo from './assets/postman.png';
 import glaLogo from './assets/collegeLogo.png';
-import vpsLogo from './assets/vps_logo.png';
+import vpsLogo from './assets/schoolLogo.png';
 
 
 
@@ -28,10 +28,10 @@ import netlifyLogo from './assets/netlify.png';
 
 
 
-import agcLogo from './assets/agc_logo.png';
-import newtonschoolLogo from './assets/newtonschool_logo.png';
-import githubdetLogo from './assets/github_det.png';
-import csprepLogo from './assets/cs_prep.png';
+import agcLogo from './assets/ieteIT.png';
+import newtonschoolLogo from './assets/isaandisoi.png';
+import githubdetLogo from './assets/healthHub.png';
+import csprepLogo from './assets/mentorProject.png';
 import javaLogo from './assets/java.png';
 import pythonLogo from './assets/python.png';
 
@@ -154,6 +154,8 @@ export const projects = [
     description: 'This is a full stack project frontend is made by me using ReactJS , tailwind CSS and the rest API was handled by me  and the backend is made by the my friend Soumajit Banerjee using Spring boot ',
     image: githubdetLogo,
     tags: ['HTML', 'CSS', 'JavaScript', 'React JS', 'API','Tailwind CSS'],
+    github: "https://github.com/tirthaGhosh91213/healthHub-frontend",
+    webapp: "",
   },
   {
     id: 1,
@@ -161,5 +163,7 @@ export const projects = [
     description: 'It was a frontend gorup project . My contribution was made the website responsive and functional  ',
     image: csprepLogo,
     tags: [ 'HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
+    github: "https://github.com/tirthaGhosh91213/healthHub-frontend",
+    webapp: "https://mentorconnect2024.netlify.app/",
   },
 ];

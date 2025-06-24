@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import bgVideo from "../assets/bgViedo.mp4";
 
 const Contact = () => {
   const form = useRef();
@@ -49,12 +50,25 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+      className="flex flex-col relative items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
     >
+       <div className="  top-0 absolute left-0 w-full h-full overflow-hidden ">
+              <video
+                src={bgVideo}
+                autoPlay
+                muted
+                loop
+               
+                className="w-full h-full object-cover"
+              >
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+      
       
       <ToastContainer />
 
-     
+     <div className=" relative">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">CONTACT</h2>
         <div className="w-32 h-1 bg-green-500 mx-auto mt-4"></div>
@@ -107,6 +121,7 @@ const Contact = () => {
             Send
           </button>
         </form>
+      </div>
       </div>
     </section>
   );

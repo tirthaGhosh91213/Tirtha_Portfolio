@@ -7,6 +7,7 @@ import Experience from "./components/Exprience";
 import Work from "./components/Work";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 const App = () => {
  return (
     <div className="bg-[#050414]">
@@ -22,6 +23,7 @@ const App = () => {
           <Work/>
           <Education/>
           <Contact/>
+          <Footer/>
       </div>
     </div>
   );
