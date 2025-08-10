@@ -8,7 +8,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
   const phrases = [
     'Fullstack Developer',
-    'UI/UX Designer',
+    'DevOps',
     'Coder',
   ];
 
