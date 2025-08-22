@@ -8,7 +8,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
   const phrases = [
     'Fullstack Developer',
-    'UI/UX Designer',
+    'DevOps',
     'Coder',
   ];
 
@@ -66,7 +66,7 @@ const About = () => {
           </p>
           
           <a
-            href=""
+            href="https://drive.google.com/file/d/1pTKsanWYOLiUroltnfCSvIgmIi7pb13d/view?usp=drivesdk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
