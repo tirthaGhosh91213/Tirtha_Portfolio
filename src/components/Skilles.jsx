@@ -29,7 +29,7 @@ const Skills = () => (
       <div className="w-24 h-1 bg-[#2be0a6] mx-auto mt-2"></div>
       <p className="text-gray-400 mt-4 text-lg font-semibold animate-fadeIn delay-200">
         A collection of my technical skills and expertise honed through various
-        projects and experiences
+        projects and experiences and the skills
       </p>
     </div>
 
