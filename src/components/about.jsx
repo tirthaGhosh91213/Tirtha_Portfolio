@@ -92,7 +92,7 @@ const About = () => {
   <img
     src={profileImage}
     alt="Tirtha Ghosh"
-    className="w-full h-full rounded-3xl object-cover"
+    className="w-2xl h-full rounded-3xl object-cover"
     style={{
       background: 'linear-gradient(90deg, #65cfa1, #a855f7)',
       boxShadow: '0 0 2px #65cfa1, 0 0 2px #65cfa1, 0 0 40px #65cfa1',
