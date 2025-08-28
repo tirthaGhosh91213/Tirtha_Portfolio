@@ -8,7 +8,6 @@ const About = () => {
   const [index, setIndex] = useState(0);
   const phrases = [
     'Fullstack Developer',
-    'DevOps',
     'Coder',
   ];
 
@@ -81,7 +80,7 @@ const About = () => {
 
         <div className="md:w-1/2 flex justify-center md:justify-end">
           <Tilt
-  className="w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 ml-16 border-4 border-green-700 rounded-3xl"
+  className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 ml-0 md:ml-16 border-4 border-green-700 rounded-3xl"
   tiltMaxAngleX={20}
   tiltMaxAngleY={20}
   perspective={1000}
@@ -92,13 +91,15 @@ const About = () => {
   <img
     src={profileImage}
     alt="Tirtha Ghosh"
-    className="w-2xl h-full rounded-3xl object-cover"
+    className="w-full h-full rounded-3xl object-cover"
     style={{
       background: 'linear-gradient(90deg, #65cfa1, #a855f7)',
       boxShadow: '0 0 2px #65cfa1, 0 0 2px #65cfa1, 0 0 40px #65cfa1',
     }}
   />
 </Tilt>
+
+
 
         </div>
       </div>
