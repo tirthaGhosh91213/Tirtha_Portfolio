@@ -79,7 +79,7 @@ const About = () => {
         </div>
 
         <div className="md:w-1/2 flex justify-center md:justify-end">
-          <Tilt
+      <Tilt
   className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 ml-0 md:ml-16 border-4 border-green-700 rounded-3xl"
   tiltMaxAngleX={20}
   tiltMaxAngleY={20}
