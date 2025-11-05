@@ -166,4 +166,13 @@ export const projects = [
     github: "https://github.com/tirthaGhosh91213/healthHub-frontend",
     webapp: "https://mentorconnect2024.netlify.app/",
   },
+  {
+    id: 2,
+    title: 'Jharkhand & Bihar News',
+    description: 'It was a full stack gorup project for a client. My contribution was made the full frontend of the website.',
+    image: csprepLogo,
+    tags: [ 'React JS', 'Rest API','Tailwind CSS'],
+    github: "https://github.com/tirthaGhosh91213/InYourArea",
+    webapp: "https://jharkhand-bihar-updates.vercel.app/",
+  },
 ];
