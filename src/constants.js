@@ -20,6 +20,7 @@ import vscodeLogo from './assets/vscode.png';
 import postmanLogo from './assets/postman.png';
 import glaLogo from './assets/collegeLogo.png';
 import vpsLogo from './assets/schoolLogo.png';
+import jkNews from './assets/JK_News.png'
 
 
 
@@ -170,7 +171,7 @@ export const projects = [
     id: 2,
     title: 'Jharkhand & Bihar News',
     description: 'It was a full stack gorup project for a client. My contribution was made the full frontend of the website.',
-    image: csprepLogo,
+    image: jkNews,
     tags: [ 'React JS', 'Rest API','Tailwind CSS'],
     github: "https://github.com/tirthaGhosh91213/InYourArea",
     webapp: "https://jharkhand-bihar-updates.vercel.app/",
