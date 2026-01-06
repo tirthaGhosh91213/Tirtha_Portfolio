@@ -174,6 +174,6 @@ export const projects = [
     image: jkNews,
     tags: [ 'React JS', 'Rest API','Tailwind CSS'],
     github: "https://github.com/tirthaGhosh91213/InYourArea",
-    webapp: "https://jharkhand-bihar-updates.vercel.app/",
+    webapp: "https://jharkhandupdates.com/",
   },
 ];
