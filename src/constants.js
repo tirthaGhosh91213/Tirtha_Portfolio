@@ -35,6 +35,7 @@ import githubdetLogo from './assets/healthHub.png';
 import csprepLogo from './assets/mentorProject.png';
 import javaLogo from './assets/java.png';
 import pythonLogo from './assets/python.png';
+import ulmind from './assets/ulmind.png'
 
 // Skills Information
 export const SkillsInfo = [
@@ -90,9 +91,18 @@ export const SkillsInfo = [
 
 // Experience Section
 export const experiences = [
- 
-  {
+ {
     id: 0,
+    img: ulmind,
+    role: 'Co-Founder & CTO ',
+    company: 'ULMiND',
+    date: ' Nov 2025 - present',
+    desc: `CTO & Co-Founder at Ulmind
+I am a Full-Stack Developer with strong experience in React.js, Node.js, MongoDB, and MySQL. As the CTO and Co-Founder of Ulmind, I lead product architecture, backend and frontend development, and technical strategy, focusing on building scalable, secure, and high-performance web applications.`,
+    skills: ['ReactJS', 'Redux', 'JavaScript', 'Tailwind CSS', 'HTML', 'CSS', 'MongoDB','NodeJS','ExpressJS'],
+  },
+  {
+    id: 1,
     img: agcLogo,
     role: 'Fullstack Developer',
     company: 'IETE HIT-IT',
@@ -101,7 +111,7 @@ export const experiences = [
     skills: ['ReactJS', 'Redux', 'JavaScript', 'Tailwind CSS', 'HTML', 'CSS', 'MongoDB','NodeJS','ExpressJS'],
   },
   {
-    id: 1,
+    id: 2,
     img: newtonschoolLogo,
     role: 'Fullstack Developer',
     company: 'ISA & ISOI',
@@ -135,7 +145,7 @@ export const experiences = [
       degree: " WBCHSE(XII) - PCMB ",
     },
     {
-      id: 1,
+      id: 2,
       img: vpsLogo,
       school: "Kaligram High School , Bardhaman , West Bengal",
       date: "Apr 2019 - March 2020",
