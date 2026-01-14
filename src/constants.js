@@ -13,7 +13,6 @@ import expressjsLogo from './assets/express.png';
 import mysqlLogo from './assets/mysql.png';
 import mongodbLogo from './assets/mongodb.png';
 import cLogo from './assets/c.png';
-import cppLogo from './assets/cpp.png';
 import gitLogo from './assets/git.png';
 import githubLogo from './assets/github.png';
 import vscodeLogo from './assets/vscode.png';
@@ -36,6 +35,8 @@ import csprepLogo from './assets/mentorProject.png';
 import javaLogo from './assets/java.png';
 import pythonLogo from './assets/python.png';
 import ulmind from './assets/ulmind.png'
+import vercel from './assets/vercel.png'
+
 
 // Skills Information
 export const SkillsInfo = [
@@ -68,7 +69,6 @@ export const SkillsInfo = [
     title: 'Languages',
     skills: [
       { name: 'C', logo: cLogo },
-      { name: 'C++', logo: cppLogo },
       { name: 'JavaScript', logo: javascriptLogo },
       { name: 'Java', logo: javaLogo },
       { name: 'python', logo: pythonLogo },
@@ -85,6 +85,7 @@ export const SkillsInfo = [
      
       { name: 'Netlify', logo: netlifyLogo },
       { name: 'Figma', logo: figmaLogo },
+      { name: 'Vercel', logo: vercel },
     ],
   },
 ];
