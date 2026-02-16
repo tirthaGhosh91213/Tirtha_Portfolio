@@ -1,78 +1,89 @@
 import React from "react";
 import { SkillsInfo } from "../constants";
-import Tilt from "react-parallax-tilt";
-import bgVideo from "../assets/bgViedo.mp4";
 
-const Skills = () => (
-  <section
-    id="skills"
-    className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] mt-10 font-sans relative overflow-hidden"
-  >
-    <div className="  top-0 absolute left-0 w-full h-full overflow-hidden ">
-      <video
-        src={bgVideo}
-        autoPlay
-        muted
-        loop
-        className="w-full h-full object-cover"
-      >
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
-  
-    
+const Skills = () => {
+  return (
+    <section id="skills" className="relative py-20 bg-[#090909] overflow-hidden ">
+      
+      {/* 1. CLEAN TECHNICAL GRID */}
+      <div className="absolute inset-0 z-0 opacity-[0.15] [background-image:linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)] [background-size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_85%)]"></div>
 
-    <div className="text-center mb-8 relative z-10">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white animate-fadeIn">
-        SKILLS
-      </h2>
-      <div className="w-24 h-1 bg-[#2be0a6] mx-auto mt-2"></div>
-      <p className="text-gray-400 mt-4 text-lg font-semibold animate-fadeIn delay-200">
-        A collection of my technical skills and expertise honed through various
-        projects and experiences and the skills
-      </p>
-    </div>
-
-    <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between relative z-10">
-      {SkillsInfo.map((category) => (
-        <div
-          key={category.title}
-          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] hover:scale-105 hover:bg-gray-800 transform transition-all duration-500"
-        >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
-            {category.title}
-          </h3>
-
-          <Tilt
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-              {category.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 text-center hover:bg-gray-800 hover:border-[#6ec297] transition-all duration-300"
-                >
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                  />
-                  <span className="text-xs sm:text-sm text-gray-300">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Tilt>
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        
+        {/* --- COMPACT HEADER --- */}
+        <div className="mb-10 flex flex-col md:flex-row items-end justify-between border-b-2 border-white/10 pb-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none">
+              The <span className="text-emerald-500 italic">Stack.</span>
+            </h2>
+            <p className="text-gray-400 mt-4 text-[12px] font-bold tracking-widest uppercase opacity-60">Technical Inventory</p>
+          </div>
+          <div className="flex items-center gap-3 bg-white/5 px-4 py-2 border border-white/10">
+             <div className="w-2 h-2 bg-emerald-500 animate-pulse"></div>
+             <span className="text-emerald-500 font-mono text-[13px] font-black uppercase tracking-[0.1em]">System_Active</span>
+          </div>
         </div>
-      ))}
-    </div>
-  </section>
-);
+
+        {/* --- LARGE-CHIP BENTO GRID --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+          {SkillsInfo.map((category, idx) => (
+            <div
+              key={category.title}
+              className="group relative bg-[#000000] p-8 md:p-8 transition-all duration-500 hover:bg-[#050505]"
+            >
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-10">
+                  <h3 className="text-2xl font-black text-white tracking-widest uppercase flex items-center gap-4">
+                    <span className="text-emerald-500 font-mono text-sm">0{idx + 1}</span>
+                    {category.title}
+                  </h3>
+                  <div className="w-10 h-10 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:border-emerald-500 group-hover:rotate-90">
+                     <div className="w-2 h-2 bg-emerald-500"></div>
+                  </div>
+                </div>
+
+                {/* LARGE CHIPS: High visibility, wide layout */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="group/skill flex items-center gap-5 p-4 bg-[#0f0f0f] border border-white/5 transition-all duration-300 hover:border-emerald-500 hover:bg-white/[0.03] hover:-translate-y-1"
+                    >
+                      {/* Large, Fully Visible Logo */}
+                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white/5 rounded-lg p-2 transition-all duration-500 group-hover/skill:bg-emerald-500/10 group-hover/skill:scale-110">
+                        <img
+                          src={skill.logo}
+                          alt={skill.name}
+                          className="w-full h-full object-contain filter drop-shadow-[0_0_5px_rgba(255,255,255,0.1)]"
+                        />
+                      </div>
+                      
+                      <div className="flex flex-col">
+                        <span className="text-[11px] font-black uppercase tracking-widest text-white group-hover/skill:text-emerald-500 transition-colors">
+                          {skill.name}
+                        </span>
+                        <div className="w-0 h-[1px] bg-emerald-500 transition-all duration-500 group-hover/skill:w-full mt-1"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Interaction Draw Line */}
+              <div className="absolute top-0 left-0 h-[2px] w-0 bg-emerald-500 transition-all duration-700 group-hover:w-full"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* --- FOOTER: Refined Minimalism --- */}
+        <div className="mt-10 flex justify-between items-center opacity-30">
+          <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-white italic">Hardware_Accelerated</span>
+          <div className="h-px w-24 bg-white/20"></div>
+          <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-white italic">2026</span>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Skills;

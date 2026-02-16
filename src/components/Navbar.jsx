@@ -1,121 +1,139 @@
 import React, { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FiMenu, FiX, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
+      
+      const sections = ["about", "skills", "experience", "work", "education"];
+      const current = sections.find(section => {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMenuItemClick = (sectionId) => {
-    setActiveSection(sectionId);
-    setIsOpen(false);
-    const section = document.getElementById(sectionId);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-  };
-
   const menuItems = [
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
     { id: "work", label: "Projects" },
-    { id: "education", label: "Education" },
+    { id: "experience", label: "Experience" },
   ];
 
+  const handleNavClick = (id) => {
+    setIsOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[999] transition-all duration-1000 ease-out-cubic px-4 sm:px-8 lg:px-16 xl:px-24 2xl:px-32 ${
+    <nav className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
       isScrolled 
-        ? "h-20 bg-gradient-to-r from-slate-900/80 via-gray-900/70 to-slate-900/80 backdrop-blur-3xl shadow-2xl shadow-[#65cfa1]/20 border-b-[1px] border-[#65cfa1]/40" 
-        : "h-24 bg-gradient-to-r from-slate-900/40 via-gray-900/20 to-slate-900/40 backdrop-blur-xl shadow-xl shadow-transparent"
+        ? "bg-slate-900/80 backdrop-blur-lg py-3 shadow-xl" 
+        : "bg-transparent py-6"
     }`}>
-      <div className="h-full max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         
-        {/* Luxury Logo */}
-        <div className="flex items-center space-x-2 group cursor-pointer p-2 -m-2 rounded-2xl hover:bg-white/10 transition-all duration-500 hover:scale-[1.02]">
-          <div className="w-3 h-3 bg-gradient-to-r from-[#65cfa1] to-[#0c944c] rounded-full shadow-lg shadow-[#65cfa1]/50 group-hover:animate-ping-slow"></div>
-          <span className="text-2xl lg:text-3xl font-black bg-gradient-to-r from-[#65cfa1] via-white to-[#0c944c] bg-clip-text text-transparent drop-shadow-2xl group-hover:shadow-emerald-400/50 transition-all duration-700">
-            Tirtha Ghosh
+        {/* Logo with subtle hover lift */}
+        <div 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="cursor-pointer transition-transform duration-300 hover:-translate-y-0.5"
+        >
+          <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
+            Tirtha<span className="text-emerald-500">Ghosh</span>
           </span>
         </div>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center space-x-1 xl:space-x-2 font-mono font-semibold text-lg">
-          {menuItems.map((item, idx) => (
-            <li key={item.id} className="group relative">
-              <button
-                onClick={() => handleMenuItemClick(item.id)}
-                className={`px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 transition-all duration-700 hover:bg-white/20 hover:border-[#65cfa1]/50 hover:text-[#65cfa1] hover:shadow-2xl hover:shadow-[#65cfa1]/30 hover:scale-[1.02] overflow-hidden relative ${
-                  activeSection === item.id ? "text-[#65cfa1] !bg-gradient-to-r !from-[#65cfa1]/20 !to-[#0c944c]/20 !shadow-emerald-500/40 !border-[#65cfa1]/60" : "text-white/90"
-                }`}
-              >
-                <span className="relative z-10">{item.label}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#65cfa1]/20 to-[#0c944c]/20 scale-0 group-hover:scale-100 transition-transform duration-700 origin-center rounded-2xl" />
-                {/* Active Indicator */}
-                {activeSection === item.id && (
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#65cfa1] rounded-full shadow-lg shadow-[#65cfa1]/50 animate-pulse" />
-                )}
-              </button>
-            </li>
+        {/* Desktop Links with Animated Underline */}
+        <div className="hidden lg:flex items-center space-x-10">
+          {menuItems.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`relative text-sm font-medium tracking-wide transition-all duration-300 group ${
+                activeSection === item.id ? "text-emerald-400" : "text-gray-300 hover:text-white"
+              }`}
+              style={{ animation: `fadeInDown 0.5s ease forwards ${index * 0.1}s` }}
+            >
+              {item.label}
+              <span className={`absolute -bottom-1 left-0 h-[2px] bg-emerald-500 transition-all duration-300 ${
+                activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
+            </button>
           ))}
-        </ul>
+        </div>
 
-        {/* Social Icons - FIXED VISIBILITY */}
-        <div className="hidden md:flex items-center space-x-4">
-          <a href="https://github.com/tirthaGhosh91213" target="_blank" rel="noopener noreferrer" className="group p-3 rounded-2xl bg-white/20 backdrop-blur-xl border-2 border-white/40 hover:bg-[#65cfa1]/30 hover:text-[#65cfa1] hover:border-[#65cfa1]/60 hover:shadow-2xl hover:shadow-[#65cfa1]/40 hover:scale-110 transition-all duration-500 hover:rotate-3 shadow-lg text-white">
-            <FaGithub size={20} className="group-hover:animate-bounce" />
-          </a>
-          <a href="https://www.linkedin.com/in/tirtha-ghosh-098a072ba/" target="_blank" rel="noopener noreferrer" className="group p-3 rounded-2xl bg-white/20 backdrop-blur-xl border-2 border-white/40 hover:bg-blue-500/30 hover:text-blue-300 hover:border-blue-400/60 hover:shadow-2xl hover:shadow-blue-400/40 hover:scale-110 transition-all duration-500 hover:rotate-3 shadow-lg text-white">
-            <FaLinkedin size={20} className="group-hover:animate-bounce" />
+        {/* Media Cluster with Hover Interactions */}
+        <div className="hidden md:flex items-center space-x-6 border-l border-white/10 pl-8">
+          <div className="flex items-center gap-4">
+            <a href="https://github.com" target="_blank" rel="noreferrer" 
+               className="text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1">
+              <FiGithub size={20} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" 
+               className="text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1">
+              <FiLinkedin size={20} />
+            </a>
+          </div>
+          
+          <a 
+            href="mailto:contact@tirthaghosh.com" 
+            className="group relative flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-lg shadow-emerald-900/20 active:scale-95 overflow-hidden"
+          >
+            <span className="relative z-10">Hire Me</span>
+            <FiSend className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-3 rounded-2xl bg-white/20 backdrop-blur-xl border border-white/30 hover:bg-[#65cfa1]/30 hover:text-[#65cfa1] hover:shadow-2xl hover:shadow-[#65cfa1]/50 hover:scale-110 transition-all duration-500 shadow-xl text-white"
+          className="lg:hidden text-white transition-transform duration-300 active:scale-75"
         >
-          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </button>
       </div>
 
-      {/* Luxury Mobile Menu */}
-      {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-gradient-to-r from-slate-900/90 via-gray-900/80 to-slate-900/90 backdrop-blur-3xl border-t border-[#65cfa1]/40 shadow-2xl py-8 px-6">
-          <div className="max-w-md mx-auto">
-            <ul className="space-y-4">
-              {menuItems.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => handleMenuItemClick(item.id)}
-                    className={`w-full text-left p-6 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 font-semibold text-xl transition-all duration-700 hover:bg-[#65cfa1]/20 hover:text-[#65cfa1] hover:shadow-2xl hover:shadow-[#65cfa1]/40 hover:translate-x-2 hover:scale-[1.02] text-white ${
-                      activeSection === item.id && "!bg-gradient-to-r !from-[#65cfa1]/30 !to-[#0c944c]/30 !text-[#65cfa1] !shadow-emerald-500/50"
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <div className="flex justify-center space-x-8 mt-12 pt-8 border-t border-white/20">
-              <a href="https://github.com/tirthaGhosh91213" target="_blank" rel="noopener noreferrer" className="group p-4 rounded-2xl bg-white/20 backdrop-blur-xl border-2 border-white/40 hover:bg-[#65cfa1]/30 hover:text-[#65cfa1] hover:shadow-2xl hover:shadow-[#65cfa1]/50 hover:scale-125 transition-all duration-700 text-white">
-                <FaGithub size={24} />
-              </a>
-              <a href="https://www.linkedin.com/in/tirtha-ghosh-098a072ba/" target="_blank" rel="noopener noreferrer" className="group p-4 rounded-2xl bg-white/20 backdrop-blur-xl border-2 border-white/40 hover:bg-blue-500/30 hover:text-blue-300 hover:shadow-2xl hover:shadow-blue-400/50 hover:scale-125 transition-all duration-700 text-white">
-                <FaLinkedin size={24} />
-              </a>
-            </div>
+      {/* Mobile Menu with Slide-Down Animation */}
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-2xl border-t border-white/5 transition-all duration-500 ease-in-out ${
+        isOpen ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible"
+      }`}>
+        <div className="flex flex-col p-8 space-y-6">
+          {menuItems.map((item, i) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`text-2xl font-bold text-white transition-all duration-500 delay-[${i * 50}ms] ${
+                isOpen ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+          <div className="flex gap-8 pt-6 border-t border-white/10">
+            <a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors"><FiGithub size={26}/></a>
+            <a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors"><FiLinkedin size={26}/></a>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
