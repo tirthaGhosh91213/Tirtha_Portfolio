@@ -20,6 +20,8 @@ import postmanLogo from './assets/postman.png';
 import glaLogo from './assets/collegeLogo.png';
 import vpsLogo from './assets/schoolLogo.png';
 import jkNews from './assets/JK_News.png'
+import IssueForge from './assets/IssueForge.png'
+import DoctorApp from './assets/DoctorApp.png'
 
 
 
@@ -171,12 +173,14 @@ export const projects = [
   },
   {
     id: 1,
-    title: 'Mentor & Mantis connect',
-    description: 'It was a frontend gorup project . My contribution was made the website responsive and functional  ',
-    image: csprepLogo,
-    tags: [ 'HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
-    github: "https://github.com/tirthaGhosh91213/healthHub-frontend",
-    webapp: "https://mentorconnect2024.netlify.app/",
+    title: 'Issue Forge',
+    description: `* Developed a full-stack Issue Tracking System using React, Node.js, Express & MongoDB  
+* Implemented JWT authentication, role-based access (Admin/User), project & issue workflows  
+* Integrated email notifications, media uploads, search, pagination and dashboard analytics `,
+    image: IssueForge,
+    tags: [ 'ReactJS ', 'NodeJS', 'ExpressJS','MongoDB', 'Tailwind CSS'],
+    github: "https://github.com/tirthaGhosh91213/IssueForge",
+    webapp: "",
   },
   {
     id: 2,
@@ -186,5 +190,16 @@ export const projects = [
     tags: [ 'React JS', 'Rest API','Tailwind CSS'],
     github: "https://github.com/tirthaGhosh91213/InYourArea",
     webapp: "https://jharkhandupdates.com/",
+  },
+   {
+    id: 3,
+    title: 'MediNex',
+    description: `Developed a full-stack Online Doctor Appointment & Telemedicine Platform using the MERN stack that allows users to seamlessly book doctor appointments based on available time slots. The platform supports online and cash payment options, ensuring flexible and secure transactions.
+
+The system enables patients to consult doctors remotely through real-time video calls, improving accessibility to healthcare services. Implemented a responsive frontend, secure authentication, efficient appointment management, and scalable backend APIs to handle bookings, payments, and user data efficiently.`,
+    image: DoctorApp,
+    tags:  [ 'ReactJS ', 'NodeJS', 'ExpressJS','MongoDB', 'Tailwind CSS'],
+    github: "https://github.com/tirthaGhosh91213/MediNex_FullStack",
+    webapp: "",
   },
 ];
