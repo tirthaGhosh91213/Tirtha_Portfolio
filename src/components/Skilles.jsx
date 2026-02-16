@@ -29,7 +29,7 @@ const Skills = () => {
           {SkillsInfo.map((category, idx) => (
             <div
               key={category.title}
-              className="group relative bg-[#000000] p-8 md:p-8 transition-all duration-500 hover:bg-[#050505]"
+              className="group relative bg-[#060606] p-8 md:p-8 transition-all duration-500 hover:bg-[#090909]"
             >
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-10">
